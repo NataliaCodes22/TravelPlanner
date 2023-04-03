@@ -1,0 +1,16 @@
+{% extends 'travelplanner/base.html' %}
+
+{% block title %}
+    Packing Items
+{% endblock %}
+
+{% block content %}
+    <h2>Packing Items</h2>
+    <ul>
+        {% for item in object_list %}
+            <li><a href="{% url 'TravelPlanner:packingitem-detail' item.pk %}">{{ item.name }}</a></li>
+        {% empty %}
+            <li>No packing items found.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

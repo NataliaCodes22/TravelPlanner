@@ -1,0 +1,18 @@
+{% extends 'travelplanner/base.html' %}
+
+{% block title %}
+    Travel Plan - {{ object.name }}
+{% endblock %}
+
+{% block content %}
+    <h2>{{ object.name }}</h2>
+    <p>{{ object.description }}</p>
+    <h3>Destinations:</h3>
+    <ul>
+        {% for destination in object.destinations.all %}
+            <li><a href="{% url 'TravelPlanner:destination-detail' destination.pk %}">{{ destination.name }}</a></li>
+        {% empty %}
+            <li>No destinations found.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'TravelPlanner/base.html' %}
+
+{% block title %}Destinations{% endblock %}
+
+{% block content %}
+    <h2>Destinations</h2>
+    <a href="{% url 'destination_create' %}">Add Destination</a>
+    <ul>
+    {% for destination in object_list %}
+        <li><a href="{% url 'destination_detail' destination.pk %}">{{ destination.name }}</a></li>
+    {% empty %}
+        <li>No destinations added yet.</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+
+{##W tym pliku dziedziczymy po pliku base.html,#}
+{#a następnie definiujemy bloki 'title' i 'content'.#}
+{#W bloku 'title' ustawiamy tytuł strony na 'Destinations', a w bloku 'content' wyświetlamy listę wszystkich destynacji.#}
+{#Każda destynacja jest wyświetlana jako link do strony szczegółów o danej destynacji.#}
+{#Dodatkowo, dodajemy link do strony tworzenia nowej destynacji.#}
+{#Jeśli nie ma jeszcze żadnych destynacji, wyświetlamy informację, że nie dodano jeszcze żadnej destynacji.#}

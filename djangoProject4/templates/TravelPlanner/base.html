@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Travel Planner</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'destination_list' %}">Destinations</a></li>
+            <li><a href="{% url 'travel_plan_list' %}">Travel Plans</a></li>
+            <li><a href="{% url 'packing_list_add' %}">Packing Lists</a></li>
+            <li><a href="{% url 'login' %}">Log in</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; Travel Planner 2023</p>
+    </footer>
+</body>
+</html>

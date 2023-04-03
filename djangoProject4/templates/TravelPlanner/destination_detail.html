@@ -1,0 +1,17 @@
+{% extends 'travelplanner/base.html' %}
+
+{% block title %}Destination Detail{% endblock %}
+
+{% block content %}
+    <h2>{{ destination.name }}</h2>
+    <p>{{ destination.description }}</p>
+    <p>Location: {{ destination.location }}</p>
+    <img src="{{ destination.photo.url }}" alt="{{ destination.name }}">
+{% endblock %}
+
+
+#Ten szablon wykorzystuje dziedziczenie z pliku base.html za pomocą tagu {% extends %}.
+W bloku {% block title %} określamy tytuł strony, a w bloku {% block content %} umieszczamy treść strony,
+która wyświetli informacje o danym celu podróży.
+Zmienna destination jest przekazywana z widoku DestinationDetailView,
+a w tym szablonie wykorzystujemy jej pola, aby wyświetlić nazwę, opis, lokalizację i zdjęcie celu podróży

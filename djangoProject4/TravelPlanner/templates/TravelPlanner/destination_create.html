@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Create New Destination</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}
+
+
+
+#W tym kodzie używamy dziedziczenia szablonów (z base.html),
+aby wyświetlić formularz tworzenia nowej destynacji.
+Formularz jest przesłany metodą POST i zawiera pole CSRF.
+Wykorzystujemy form.as_p aby wygenerować HTML dla formularza,
+a następnie dodajemy przycisk Save, aby umożliwić użytkownikowi zapisanie wprowadzonych danych.

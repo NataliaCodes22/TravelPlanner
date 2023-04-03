@@ -1,0 +1,15 @@
+{% extends 'travelplanner/base.html' %}
+
+{% block title %}
+    Packing Item - {{ object.name }}
+{% endblock %}
+
+{% block content %}
+    <h2>{{ object.name }}</h2>
+    <ul>
+        <li>Quantity: {{ object.quantity }}</li>
+        <li>Category: {{ object.category }}</li>
+        <li>Is packed: {{ object.is_packed }}</li>
+        <li>Packing List: {{ object.packing_list }}</li>
+    </ul>
+{% endblock %}
